@@ -1,0 +1,20 @@
+{
+	"name": "NODE-SERVER-FOR-TESTING",
+	"version": "0.0.1",
+	"description": "This is a minimalist Node.js server designed for testing samples of code, libraries, frameworks, ...",
+	"author": "Grand Sage InExtremis <grand.sage.inextremis@gmail.com>",
+	"license": "Unlicense",
+	"type": "module",
+	"main": "./dist/server/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"homepage": "https://github.com/grand-sage-inextremis/NODE-SERVER-FOR-TESTING#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/grand-sage-inextremis/NODE-SERVER-FOR-TESTING.git"
+	},
+	"bugs": {
+		"url": "https://github.com/grand-sage-inextremis/NODE-SERVER-FOR-TESTING/issues"
+	}
+}
