@@ -1,4 +1,5 @@
 import { createServer } from 'http';
+import { sendOneStaticFile, setStaticFilesRoutes } from './staticFiles.js';
 
 
 
@@ -9,9 +10,21 @@ const PORT = 8000;
 
 const server = createServer(function (req, res)
 {
-	res.statusCode = 200;
-	res.setHeader('Content-Type', 'text/plain');
-	res.end('Hello World!\n');
+	let wasResponseSent: boolean;
+
+	wasResponseSent = setStaticFilesRoutes(req, res, [
+		{ pathnameBase: '/scripts/', directory: './dist/client/' },
+		{ pathnameBase: '/assets/', directory: './public/' }
+	]);
+
+	if (wasResponseSent)
+	{
+		return;
+	}
+
+	console.log("Cette phrase ne devrait pas être affichée...");
+
+	sendOneStaticFile(req, res, './public/hello-world.html');
 });
 
 
