@@ -1,5 +1,5 @@
 import { createServer } from 'http';
-import { sendOneStaticFile, setStaticFilesRoutes } from './staticFiles.js';
+import { sendOneStaticFile, setStaticFilesRoutes } from './staticFiles';
 
 
 
