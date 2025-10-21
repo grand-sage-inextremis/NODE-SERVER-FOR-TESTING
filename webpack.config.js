@@ -35,7 +35,7 @@ const WEBPACK_CONFIG = {
 	mode: NODE_ENV,
 	entry: `./src-${LANGUAGE}/${WEB_ENV}/index.${LANGUAGE}`,
 	output: {
-		filename: 'index.js',
+		filename: 'index.cjs',
 		path: path.resolve(`./dist/${WEB_ENV}/`)
 	},
 	plugins: [
