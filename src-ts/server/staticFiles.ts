@@ -4,6 +4,18 @@ import mime from 'mime';
 
 
 
+function getMIMEType(pathname: string): string | null
+{
+	if (pathname.endsWith('.cjs'))
+	{
+		return 'text/javascript';
+	}
+
+	return mime.getType(pathname);
+}
+
+
+
 export function sendOneStaticFile
 (
 	req: IncomingMessage,
@@ -21,7 +33,7 @@ export function sendOneStaticFile
 
 
 	res.statusCode = 200;
-	res.setHeader('Content-Type', mime.getType(filePathname) ?? 'text/plain');
+	res.setHeader('Content-Type', getMIMEType(filePathname) ?? 'text/plain');
 
 	stream.on('error', function ()
 	{
